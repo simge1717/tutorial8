@@ -1,0 +1,58 @@
+/*
+   New Perspectives on HTML and CSS
+   Tutorial 8
+   Case Problem 1
+
+   dessertWeb Print Styles
+   Author: Simge Sinav
+   Date:  11/18/2025 
+
+   Filename:         dwprint.css
+   Supporting Files: 
+
+*/
+
+@page {
+    size: 8.5in 11in portrait;
+    margin: 0.5in;
+}
+
+header,
+nav,
+.left-section,
+.right-section,
+aside,
+footer,
+hgroup h2,
+article p:last-of-type,
+#right {  /* Sağ bölüm (Reviews) gizlendi */
+    display: none !important;
+}
+
+
+
+/* Başlıklar */
+h1 {
+    font-size: 200%;
+    margin-bottom: 0.2in;
+}
+
+h2 {
+    font-size: 150%;
+    margin-top: 0.5in;
+}
+
+/* Liste ayarları */
+li {
+    line-height: 1.5em;
+}
+
+ol {
+    margin-left: 0.5in;
+    list-style-type: decimal;
+}
+
+/* Sayfa kırılması */
+h2:last-of-type {
+    page-break-before: always;
+}

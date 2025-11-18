@@ -1,0 +1,63 @@
+/*
+   New Perspectives on HTML and CSS
+   Tutorial 8
+   Case Problem 1
+   Special Effects style sheet
+   Author: Simge Sinav
+   Date:   11/18/2025
+
+   Filename:         dweffects.css
+   Supporting Files: 
+
+*/
+
+
+body {
+    box-shadow:
+        10px 0 15px rgba(211, 211, 211, 0.5),   /* sağ kenar gölgesi */
+        -10px 0 15px rgba(211, 211, 211, 0.5);  /* sol kenar gölgesi */
+}
+
+nav.horizontal ul li {
+    background-color: rgb(224, 238, 238);      /* a) arka plan rengi */
+    border-radius: 10px;                       /* b) 10px yuvarlatma */
+    box-shadow:                                 /* c) iki inset gölge */
+        inset 3px 3px 2px rgba(255, 255, 255, 1),           /* üst-sol beyaz */
+        inset -5px -5px 5px rgb(147, 207, 207);             /* alt-sağ gölge */
+}
+
+
+article {
+    box-shadow:
+        inset 15px 15px 75px rgb(171, 171, 171),   /* a) iç gölge - alt sağ */
+        5px 5px 5px rgb(101, 101, 101);            /* b) dış gölge - alt sağ */
+}
+
+
+
+blockquote {
+    /* a) Standart CSS3 linear-gradient (soldan sağa) */
+    background: linear-gradient(
+        to right,
+        rgb(166, 230, 230) 0%,     /* başlangıç rengi */
+        rgb(231, 231, 231) 5%,     /* 5% noktasında color stop */
+        rgb(255, 255, 255) 15%     /* 15% noktasında bitiş */
+    );
+
+    /* b) WebKit eski tarayıcı uyumu */
+    background: -webkit-gradient(
+        linear,
+        left top,
+        right top,
+        from(rgb(166, 230, 230)),
+        color-stop(0.33, rgb(231, 231, 231)),   /* 33% color stop */
+        to(rgb(255, 255, 255))
+    );
+
+    /* c) Internet Explorer için Gradient filter */
+    filter: progid:DXImageTransform.Microsoft.gradient(
+        GradientType=1,                  /* 1 = horizontal */
+        StartColorStr='#DEF4F4',
+        EndColorStr='#FFFFFF'
+    );
+}
